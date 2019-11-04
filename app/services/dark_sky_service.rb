@@ -1,6 +1,7 @@
 class DarkSkyService
 
   def forecast(geo_coordinates)
+    binding.pry
     response = conn.get("/forecast/#{ENV['DARKSKY_API']}/#{geo_coordinates[:lat]},#{geo_coordinates[:lng]}")
   end
 

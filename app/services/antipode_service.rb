@@ -2,6 +2,9 @@ class AntipodeService
 
   def get_antipode(coordinates)
     response = conn.get("?lat=#{coordinates[:lat]}&lng=#{coordinates[:lng]}")
+    body = response.body
+    json_d = JSON.parse(body, symbolize_names: true)
+    json_d[:data][:attributes]
   end
 
   def conn

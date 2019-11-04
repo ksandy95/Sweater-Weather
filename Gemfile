@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'pry'
+  gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'webmock'
   gem 'vcr'

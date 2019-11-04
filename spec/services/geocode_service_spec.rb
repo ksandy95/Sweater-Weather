@@ -9,7 +9,6 @@ RSpec.describe "Geocode Service" do
       body = connection.body
       json_d = JSON.parse(body, symbolize_names: true)
       lat_long = json_d[:results].first[:geometry][:bounds][:northeast]
-      binding.pry
       expect(lat_long).to be_a Hash
       expect(lat_long.count).to eq(2)
     end

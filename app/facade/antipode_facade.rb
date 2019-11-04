@@ -20,6 +20,8 @@ class AntipodeFacade
     body = get_antipode_forecast(location).body
     parsed = JSON.parse(body, symbolize_names: true)
     binding.pry
+    
+    # the end of this method needs to return my hash for my object to be created with in my serializer.
   end
 
 

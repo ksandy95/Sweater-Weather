@@ -1,6 +1,5 @@
 class DarkSkyService
 
-  # Example coordinates from docs used here
   def forecast(geo_coordinates)
     response = conn.get("/forecast/#{ENV['DARKSKY_API']}/#{geo_coordinates[:lat]},#{geo_coordinates[:lng]}")
   end

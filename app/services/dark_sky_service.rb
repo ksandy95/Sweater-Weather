@@ -1,8 +1,14 @@
 class DarkSkyService
 
   # Example coordinates from docs used here
-  def conn(geo_coordinates)
-    Faraday.get "https://api.darksky.net/forecast/#{ENV['DARKSKY_API']}/#{geo_coordinates[:lat]}, #{geo_coordinates[:lng]}"
+  def forecast(geo_coordinates)
+    response = conn.get("/forecast/#{ENV['DARKSKY_API']}/#{geo_coordinates[:lat]},#{geo_coordinates[:lng]}")
+  end
+
+  def conn
+    Faraday.new(url: "https://api.darksky.net") do |f|
+      f.adapter Faraday.default_adapter
+    end
   end
 
 end

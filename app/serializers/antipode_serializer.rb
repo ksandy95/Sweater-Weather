@@ -1,7 +1,7 @@
 class AntipodeSerializer
   include FastJsonapi::ObjectSerializer
 
-  def antipode_forecast
+  def antipode
     binding.pry
   end
 

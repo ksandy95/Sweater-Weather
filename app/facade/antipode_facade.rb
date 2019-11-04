@@ -16,5 +16,11 @@ class AntipodeFacade
     darksky_service.forecast(antipode_coordinates)
   end
 
+  def parsed_antipode_forecast(location)
+    body = get_antipode_forecast(location).body
+    parsed = JSON.parse(body, symbolize_names: true)
+    binding.pry
+  end
+
 
 end

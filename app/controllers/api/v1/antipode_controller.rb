@@ -5,6 +5,9 @@ class Api::V1::AntipodeController < ApplicationController
     # location = params[:location]
     # facade = AntipodeFacade.new(params[:location])
     # forecast = facade.get_antipode_forecast(location)
+
+    # there are no params[:id] to get from this request, i will
+    # need to create the Antipode object first to then pass in the id
     render json: AntipodeSerializer.new(Antipode.find(params[:id]))
   end
 

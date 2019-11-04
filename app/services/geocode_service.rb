@@ -1,7 +1,15 @@
 class GeocodeService
 
+  def location_coordinates(location)
+    response = conn.get("key=#{ENV['GEOCODE_API']}&address=#{location}")
+    json_d = JSON.parse(response.body, symbolize_names: true)
+    lat_long =  json_d[:results][0][:geometry][:location]
+  end
+
   def conn
-    Faraday.get "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GEOCODE_API']}&address=Denver,CO"
+    Faraday.new(url: "https://maps.googleapis.com/maps/api/geocode/json?") do |f|
+      f.adapter Faraday.default_adapter
+    end
   end
 
 end

@@ -1,7 +1,7 @@
 class DarkSkyService
 
   def forecast(geo_coordinates)
-    response = conn.get("/forecast/#{ENV['DARKSKY_API']}/#{geo_coordinates[:lat]},#{geo_coordinates[:lng]}")
+    response = conn.get("/forecast/#{ENV['DARKSKY_API']}/#{geo_coordinates[:lat]},#{geo_coordinates.values.last}")
   end
 
   def conn

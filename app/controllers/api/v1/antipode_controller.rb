@@ -8,6 +8,7 @@ class Api::V1::AntipodeController < ApplicationController
 
     # there are no params[:id] to get from this request, i will
     # need to create the Antipode object first to then pass in the id
+
     render json: AntipodeSerializer.new(Antipode.find(params[:id]))
   end
 

@@ -6,7 +6,6 @@ class AntipodeFacade
   end
 
   def get_antipode_forecast(location)
-    binding.pry
     geocode_service = GeocodeService.new
     coordinates = geocode_service.location_coordinates(location)
 

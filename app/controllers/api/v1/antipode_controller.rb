@@ -5,6 +5,8 @@ class Api::V1::AntipodeController < ApplicationController
     location = params[:location]
     facade = AntipodeFacade.new(params[:location])
     forecast = facade.get_antipode_forecast(location)
+
+    render json: AntipodeSerializer.new(Antipode.find(params[:id]))
   end
 
 end

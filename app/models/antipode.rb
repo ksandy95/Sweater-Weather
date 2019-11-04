@@ -1,6 +1,5 @@
 class Antipode < ApplicationRecord
 
-
   def initialize(params)
     @location_name = params[:location_name]
     @forecast = params[:forecast]

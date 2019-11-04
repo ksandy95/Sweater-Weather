@@ -16,8 +16,11 @@ RSpec.describe "Geocode Service" do
     it "can pass in a location" do
       service = GeocodeService.new
       test = service.location_coordinates("Denver,CO")
-      binding.pry
       expect(test.count).to eq(2)
+      expect(test).to be_a Hash
+      expect(test[:lat]).to eq(39.7392358)
+      expect(test[:lng]).to eq(-104.990251)
     end
+
   end
 end

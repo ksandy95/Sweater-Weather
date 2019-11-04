@@ -1,4 +1,5 @@
-class AntipodeSerializer < ActiveModel::Serializer
+class AntipodeSerializer
+  include FastJsonapi::ObjectSerializer
 
   def antipode_forecast
     binding.pry

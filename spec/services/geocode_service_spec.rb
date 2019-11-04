@@ -22,5 +22,14 @@ RSpec.describe "Geocode Service" do
       expect(test[:lng]).to eq(-104.990251)
     end
 
+    it "can do a reverse lookup without error" do
+      service = GeocodeService.new
+      coordinates = {:lat=>-22.1044031, :lng=>-65.5967709}
+      response = service.reverse_lookup(coordinates)
+
+      binding.pry
+      expect(response).to be_a Hash
+    end
+
   end
 end

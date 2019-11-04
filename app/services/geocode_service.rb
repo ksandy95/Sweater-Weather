@@ -6,9 +6,8 @@ class GeocodeService
     json_d[:results][0][:geometry][:location]
   end
 
-  def reverse_lookup
-    # latlng=40.714224,-73.961452&key=YOUR_API_KEY
-    
+  def reverse_lookup(location)
+    response = conn.get("latlng=#{location[:lat]},#{location[:lng]}&key=#{ENV['GEOCODE_API']}")
   end
 
   def conn

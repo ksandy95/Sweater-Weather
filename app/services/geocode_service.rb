@@ -1,7 +1,7 @@
 class GeocodeService
 
   def location_coordinates(location)
-    response = conn.get("key=#{ENV['GEOCODE_API']}&address=#{location}")
+    response = conn.get("?address=#{location}&key=#{ENV['GEOCODE_API']}")
     json_d = JSON.parse(response.body, symbolize_names: true)
     lat_long =  json_d[:results][0][:geometry][:location]
   end

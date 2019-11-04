@@ -2,10 +2,9 @@ class Api::V1::AntipodeController < ApplicationController
 
   # should render data necessary for a show page for a locations antipodes forecast data
   def show
-    location = params[:location]
-    facade = AntipodeFacade.new(params[:location])
-    forecast = facade.get_antipode_forecast(location)
-
+    # location = params[:location]
+    # facade = AntipodeFacade.new(params[:location])
+    # forecast = facade.get_antipode_forecast(location)
     render json: AntipodeSerializer.new(Antipode.find(params[:id]))
   end
 

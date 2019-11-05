@@ -15,18 +15,35 @@ class GifFacade
     location_forecast = darksky_service.forecast(geocode_coords)
   end
 
-  def gif_forecast
+  def hourly_data_first_10
     forecast_data
     parsed = JSON.parse(forecast_data.body, symbolize_names: true)
-    hourly_data_first_10 = parsed[:hourly][:data][0..9]
-    first_10_summary = hourly_data_first_10.map do |forecast|
-                          forecast[:summary]
-                       end
+    parsed[:hourly][:data][0..9]
+  end
+
+  def summary_array
+    hourly_data_first_10.map do |forecast|
+      forecast[:summary]
+    end
+  end
+
+  def gifs_list
     gif_service = GiphyService.new
-    gifs_list = first_10_summary.map do |summary|
-                  gif_service.get_gif(summary)
-                end
-    
+    gifs_list = summary_array.map do |summary|
+      gif_service.get_gif(summary)
+    end
+  end
+
+  def gif_url_array
+    gifs_list.map do |raw_data|
+      raw = raw_data.body
+      parsed = JSON.parse(raw, symbolize_names: true)
+      parsed[:data][0][:url]
+    end
+  end
+
+  def gif_forecast
+    gif_url_array
   end
 
 end

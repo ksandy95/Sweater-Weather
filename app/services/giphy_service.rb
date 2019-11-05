@@ -1,7 +1,7 @@
 class GiphyService
 
-  def get_gif
-
+  def get_gif(search)
+    
   end
 
   def conn

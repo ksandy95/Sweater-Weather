@@ -23,7 +23,10 @@ class GifFacade
                           forecast[:summary]
                        end
     gif_service = GiphyService.new
-
+    gifs_list = first_10_summary.map do |summary|
+                  gif_service.get_gif(summary)
+                end
+    
   end
 
 end

@@ -1,7 +1,8 @@
 class Api::V1::GiphyController < ApplicationController
 
   def show
-    render json: GifFacade.new(params[:location]).gif_forecast
+    gif_data = GifFacade.new(params[:location]).gif_forecast
+    render json: GiphySerializer.new(gif_data).giphy_return
   end
 
 end

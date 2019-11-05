@@ -21,6 +21,12 @@ class GifFacade
     parsed[:hourly][:data][0..9]
   end
 
+  def time_array
+    hourly_data_first_10.map do |forecast|
+      forecast[:time]
+    end
+  end
+
   def summary_array
     hourly_data_first_10.map do |forecast|
       forecast[:summary]
@@ -42,8 +48,16 @@ class GifFacade
     end
   end
 
+  def zipped_array
+    array = time_array.zip(summary_array)
+    new_array = array.zip(gif_url_array)
+    new_array.map do |arr|
+      arr.flatten
+    end
+  end
+
   def gif_forecast
-    gif_url_array
+    zipped_array
   end
 
 end

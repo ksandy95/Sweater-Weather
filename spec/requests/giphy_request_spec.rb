@@ -1,4 +1,16 @@
+require 'rails_helper'
 
+RSpec.describe "Giphy Request" do
+  describe "Gifs for a specific locations forecast" do
+
+    it "Gives me back the response I am searching for" do
+      get '/api/v1/gifs?location=denver,co'
+
+      expect(response).to be_successful
+    end
+
+  end
+end
 
 
 

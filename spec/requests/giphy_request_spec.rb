@@ -4,9 +4,20 @@ RSpec.describe "Giphy Request" do
   describe "Gifs for a specific locations forecast" do
 
     it "Gives me back the response I am searching for" do
+
       get '/api/v1/gifs?location=denver,co'
 
       expect(response).to be_successful
+      result = JSON.parse(response.body, symbolize_names: true)
+
+      expect(result).to be_a Hash
+      expect(result[:data]).to be_a Hash
+      expect(result[:copyright]).to eq("2019")
+      expect(result[:data][:images]).to be_a Array
+      expect(result[:data][:images][0]).to be_a Hash
+      expect(result[:data][:images][0][:time]).to be_a String
+      expect(result[:data][:images][0][:summary]).to be_a String
+      expect(result[:data][:images][0][:url]).to be_a String
     end
 
   end

@@ -19,7 +19,6 @@ class GifFacade
     forecast_data
     parsed = JSON.parse(forecast_data.body, symbolize_names: true)
     hourly_data_first_10 = parsed[:hourly][:data][0..9]
-    binding.pry
     first_10_summary = hourly_data_first_10.map do |forecast|
                           forecast[:summary]
                        end

@@ -7,7 +7,7 @@ RSpec.describe "Giphy Service" do
     it "does not error out when used" do
       service = GiphyService.new
       response = service.get_gif
-
+      
     end
 
   end

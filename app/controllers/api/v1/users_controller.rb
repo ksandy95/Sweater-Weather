@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
 
   def create
-    user = User.create!(user_params)
+    user = User.create!(user_params, api_key: ApiKey.new.key)
     render json: UserSerializer.new(user)
   end
 

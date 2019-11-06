@@ -36,7 +36,7 @@ class AntipodeFacade
             location_name: antipode_location,
             forecast: parsed[:currently][:summary]}
 
-    binding.pry
+    
     # the end of this method needs to return my hash for my object to be created with in my serializer.
   end
 

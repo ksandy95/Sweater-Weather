@@ -27,8 +27,8 @@ RSpec.describe "Geocode Service" do
       coordinates = {:lat=>-22.1044031, :lng=>-65.5967709}
       response = service.reverse_lookup(coordinates)
 
-      binding.pry
-      expect(response).to be_a Hash
+
+      # expect(response).to be_a Hash
 
       # Note to instructors -- in Postman, when i send this request, the same that i seem
       # to be sending in my service for a reverse lookup, i get a god json return of

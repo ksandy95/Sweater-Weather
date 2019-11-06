@@ -2,7 +2,7 @@ class Forecast
 
   def initialize(forecast)
     @forecast = forecast
-    @id = "#{current_time}"
+    @id = Time.now
     @latitude = forecast[:latitude]
     @longitude = forecast[:longitude]
     @currently = forecast[:currently]

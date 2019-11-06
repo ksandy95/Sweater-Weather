@@ -7,7 +7,7 @@ class GeocodeService
   end
 
   def reverse_lookup(location)
-    binding.pry
+    
     response = conn.get("latlng=#{location[:lat]},#{location[:lng]}&key=#{ENV['GEOCODE_API']}")
   end
 

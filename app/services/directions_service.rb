@@ -8,7 +8,7 @@ class DirectionsService
   # def travel_time(locations)
   #   response = conn.get("origin=#{locations[:origin]}&destination=#{locations[:destination]}&departure_time=now&key=#{ENV['DIRECTIONS_API']}")
   #   body = response.body
-  #   binding.pry
+  #   
   #   json = JSON.parse(body, symbolize_names:true)
   #   json[:routes][0][:legs][0][:duration]
   # end

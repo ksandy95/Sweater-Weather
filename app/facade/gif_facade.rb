@@ -1,8 +1,9 @@
 class GifFacade
-  attr_reader :location
+  attr_reader :location, :id
 
   def initialize(location)
     @location = location
+    @id = 0
   end
 
   def geocode_coords
@@ -56,8 +57,10 @@ class GifFacade
     end
   end
 
-  def gif_forecast
-    zipped_array
+  def images
+    zipped_array.map do |arr|
+      Gif.new(arr)
+    end
   end
 
 end

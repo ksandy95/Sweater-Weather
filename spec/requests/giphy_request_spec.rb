@@ -12,12 +12,12 @@ RSpec.describe "Giphy Request" do
 
       expect(result).to be_a Hash
       expect(result[:data]).to be_a Hash
-      expect(result[:copyright]).to eq("2019")
-      expect(result[:data][:images]).to be_a Array
-      expect(result[:data][:images][0]).to be_a Hash
-      expect(result[:data][:images][0][:time]).to be_a String
-      expect(result[:data][:images][0][:summary]).to be_a String
-      expect(result[:data][:images][0][:url]).to be_a String
+      expect(result[:data][:attributes][:copyright]).to eq("2019")
+      expect(result[:data][:attributes][:images]).to be_a Array
+      expect(result[:data][:attributes][:images][0]).to be_a Hash
+      expect(result[:data][:attributes][:images][0][:time]).to be_a Integer
+      expect(result[:data][:attributes][:images][0][:summary]).to be_a String
+      expect(result[:data][:attributes][:images][0][:url]).to be_a String
     end
 
   end

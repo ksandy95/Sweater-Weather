@@ -6,7 +6,6 @@ class BackgroundService
 
   def images
     response = conn.get('/search/photos')
-    parse(response)
   end
 
   def conn

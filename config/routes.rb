@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get '/antipode', to: 'antipode#show'
       get '/gifs', to: 'giphy#show'
       post '/users', to: 'users#create'
+      post '/sessions', to: 'sessions#create'
     end
   end
 

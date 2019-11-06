@@ -12,7 +12,7 @@ RSpec.describe "Login" do
       user_data = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.content_type).to eq("application/json")
-      expect(user_data[:data][:attributes].keys).to eq([:api_key])
+      expect(user_data[:data][:attributes].keys.count).to eq(2)
     end
 
   end

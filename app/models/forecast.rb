@@ -26,4 +26,5 @@ class Forecast
     @daily_summary = @parsed_forecast[:daily][:summary]
     @daily_weather = @parsed_forecast[:daily][:data]
   end
+
 end

@@ -1,10 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Giphy Request" do
-  describe "Gifs for a specific locations forecast" do
-
-    it "Gives me back the response I am searching for" do
-
+RSpec.describe 'Giphy Request' do
+  describe 'Gifs for a specific locations forecast' do
+    it 'Gives me back the response I am searching for' do
       get '/api/v1/gifs?location=denver,co'
 
       expect(response).to be_successful
@@ -12,19 +12,15 @@ RSpec.describe "Giphy Request" do
 
       expect(result).to be_a Hash
       expect(result[:data]).to be_a Hash
-      expect(result[:data][:attributes][:copyright]).to eq("2019")
+      expect(result[:data][:attributes][:copyright]).to eq('2019')
       expect(result[:data][:attributes][:images]).to be_a Array
       expect(result[:data][:attributes][:images][0]).to be_a Hash
       expect(result[:data][:attributes][:images][0][:time]).to be_a Integer
       expect(result[:data][:attributes][:images][0][:summary]).to be_a String
       expect(result[:data][:attributes][:images][0][:url]).to be_a String
     end
-
   end
 end
-
-
-
 
 # User Story Objective For Retake
 # -------------------------------------------------------------------------------

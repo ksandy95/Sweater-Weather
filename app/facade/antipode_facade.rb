@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AntipodeFacade
   attr_reader :location
 
@@ -32,13 +34,10 @@ class AntipodeFacade
 
     body = get_antipode_forecast(location).body
     parsed = JSON.parse(body, symbolize_names: true)
-    hash = {search_location: location,
-            location_name: antipode_location,
-            forecast: parsed[:currently][:summary]}
+    hash = { search_location: location,
+             location_name: antipode_location,
+             forecast: parsed[:currently][:summary] }
 
-    
     # the end of this method needs to return my hash for my object to be created with in my serializer.
   end
-
-
 end

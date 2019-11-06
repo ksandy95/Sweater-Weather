@@ -1,5 +1,6 @@
-class BackgroundService
+# frozen_string_literal: true
 
+class BackgroundService
   def initialize(location)
     @location = location
   end
@@ -15,5 +16,4 @@ class BackgroundService
       f.adapter Faraday.default_adapter
     end
   end
-
 end

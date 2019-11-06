@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ForecastFacade
   attr_reader :location
 
@@ -12,5 +14,4 @@ class ForecastFacade
     darksky_service = DarkSkyService.new
     location_forecast = darksky_service.forecast(coordinates)
   end
-
 end

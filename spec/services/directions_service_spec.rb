@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Directions Service" do
-  describe "Getting a connection without error" do
-
+RSpec.describe 'Directions Service' do
+  describe 'Getting a connection without error' do
     # it "can get a connection" do
     #   # service = DirectionsService.new
     #   # response = service.conn
@@ -17,8 +18,7 @@ RSpec.describe "Directions Service" do
     #   service = DirectionsService.new
     #   locations = {:origin=>"Boston,MA", :destination=>"Concord,MA"}
     #   response = service.travel_time(locations)
-    #   
+    #
     # end
-
   end
 end

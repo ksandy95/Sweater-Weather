@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Forecast
   attr_reader :id, :forecast, :current_time, :current_summary, :current_icon,
               :current_temperature, :current_humidity, :current_visibility,
@@ -24,5 +26,4 @@ class Forecast
     @daily_summary = @parsed_forecast[:daily][:summary]
     @daily_weather = @parsed_forecast[:daily][:data]
   end
-
 end

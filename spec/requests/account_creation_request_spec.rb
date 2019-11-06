@@ -1,14 +1,13 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-
-RSpec.describe "Creating an account" do
+RSpec.describe 'Creating an account' do
   describe 'User API' do
-
-    it "Can recieve user info and send an api" do
-
-      user_info = { "email": "nicholas@cutiepants.com",
-                    "password": "password",
-                    "password_confirmation": "password" }
+    it 'Can recieve user info and send an api' do
+      user_info = { "email": 'nicholas@cutiepants.com',
+                    "password": 'password',
+                    "password_confirmation": 'password' }
 
       post '/api/v1/users', params: user_info
 
@@ -16,7 +15,7 @@ RSpec.describe "Creating an account" do
 
       expect(response.status).to eq(200)
       expect(result).to be_a(Hash)
-      expect(result["data"]["attributes"]["api_key"].length).to eq(24)
+      expect(result['data']['attributes']['api_key'].length).to eq(24)
     end
   end
 end

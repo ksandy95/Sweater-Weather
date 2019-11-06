@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GifFacade
   attr_reader :location, :id
 
@@ -52,9 +54,7 @@ class GifFacade
   def zipped_array
     array = time_array.zip(summary_array)
     new_array = array.zip(gif_url_array)
-    new_array.map do |arr|
-      arr.flatten
-    end
+    new_array.map(&:flatten)
   end
 
   def images
@@ -62,5 +62,4 @@ class GifFacade
       Gif.new(arr)
     end
   end
-
 end

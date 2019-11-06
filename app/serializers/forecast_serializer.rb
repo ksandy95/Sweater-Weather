@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ForecastSerializer
   include FastJsonapi::ObjectSerializer
 
@@ -14,5 +16,4 @@ class ForecastSerializer
              :hourly_weather,
              :daily_summary,
              :daily_weather
-
 end

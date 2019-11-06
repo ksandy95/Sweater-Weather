@@ -1,5 +1,6 @@
-class Api::V1::AntipodeController < ApplicationController
+# frozen_string_literal: true
 
+class Api::V1::AntipodeController < ApplicationController
   # should render data necessary for a show page for a locations antipodes forecast data
   def show
     # location = params[:location]
@@ -9,10 +10,9 @@ class Api::V1::AntipodeController < ApplicationController
     # there are no params[:id] to get from this request, i will
     # need to create the Antipode object first to then pass in the id
     antipode_forecast = AntipodeFacade.new(params[:location]).parsed_antipode_forecast(params[:location])
-    
+
     render json: AntipodeSerializer.new(Antipode.find(antipode_forecast))
   end
-
 end
 
 # Example for how data should be formatted to the show page. currently, do not

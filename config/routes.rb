@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get '/backgrounds', to: 'background#show'
       get '/antipode', to: 'antipode#show'
       get '/gifs', to: 'giphy#show'
+      post '/users', to: 'users#create'
     end
   end
 

@@ -1,8 +1,10 @@
 class GiphySerializer
   include FastJsonapi::ObjectSerializer
 
-  def giphy_return
-    binding.pry
+  attributes :images
+
+  attribute :copyright do |object|
+    "2019"
   end
 
 end
